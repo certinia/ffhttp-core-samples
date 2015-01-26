@@ -1,0 +1,21 @@
+<apex:page standardController="Connector__c" extensions="ConnectorController" >
+    <apex:sectionHeader title="{!$ObjectType.Connector__c.Label}" subtitle="Activating: {!RecordName}"/>
+	<apex:pageMessages />
+	<apex:form >
+	<apex:pageBlock title="Authorization">
+		<apex:pageBlockButtons >
+			<apex:commandbutton action="{!RequestAuthorizationCode}" value="Authorize" rendered="{!!IsAuthorized && IsConfigured}"/>
+			<apex:commandbutton action="{!save}" value="Save" rendered="{!IsDirty}"/>
+			<apex:commandbutton action="{!cancel}" value="Cancel"/>
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection rendered="{!!IsAuthorized}" columns="1">
+			Click "Authorise" to start the authorization process. You will be redirected to the provider of the service you are connecting to ({!ServiceName}).
+			You will need to log into your connected service if you are not already logged in, and approve the connection. 
+			If this is successful, you will be returned to this page where you can "save" your Authorization for this connector.  
+		</apex:pageBlockSection>
+		<apex:pageBlockSection rendered="{!IsAuthorized && IsDirty}" columns="1">
+			Your connector is authorized. Click "Save" to complete the activation of this connector.
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

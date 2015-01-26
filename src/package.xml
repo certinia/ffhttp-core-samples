@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ConnectorController</members>
+        <members>ConnectorService</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Connector</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>OAuth_Sample_App</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>ConnectorType__c</members>
+        <members>Connector__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>ConnectorType__c</members>
+        <members>Connector__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>ConnectorType__c-Connector Type Layout</members>
+        <members>Connector__c-Connector Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>OAuth_Sample_App_Permissions</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>32.0</version>
+</Package>
