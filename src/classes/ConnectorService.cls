@@ -104,7 +104,7 @@ public with sharing class ConnectorService implements ffhttp_IConnectorType
         	{
 	        	//In this case the access_token has expired and needs reauthorising.
 	        	//Given that we have the refresh token we can use an OAuthClient call to do this.
-	        	exchangeCode(connector.RefreshToken__c);
+	        	exchangeCode(connector.RefreshToken__c, false);
         	}
         }
         
@@ -133,15 +133,26 @@ public with sharing class ConnectorService implements ffhttp_IConnectorType
     	return dtExpiry < dtNow;
     }
     
-    public void exchangeCode(String code)
+    public void exchangeCode(String code, boolean authCode)
     {
     	connector.AccessTokenRequested__c = System.now();
 		connector.RefreshTokenRequested__c = connector.AccessTokenRequested__c;
 		
 		ffhttp_OAuthClient client = new ffhttp_OAuthClient();
-		ffhttp_OAuthClient.ExchangeRefreshTokenRequest request = client.exchangeRefreshTokenRequest(this, code);
 		
-    	ffhttp_OAuthClient.AccessTokenResponse response = (ffhttp_OAuthClient.AccessTokenResponse)request.execute();
+		ffhttp_OAuthClient.AccessTokenResponse response;
+		
+		if (authCode)
+		{
+			ffhttp_OAuthClient.ExchangeAuthCodeRequest accessRequest = client.exchangeAuthCodeRequest(this, code);
+			response = (ffhttp_OAuthClient.AccessTokenResponse)accessRequest.execute();
+		}
+		else
+		{
+			ffhttp_OAuthClient.ExchangeRefreshTokenRequest refreshRequest = client.exchangeRefreshTokenRequest(this, code);
+			response = (ffhttp_OAuthClient.AccessTokenResponse)refreshRequest.execute();
+		}
+		
     	connector.AccessToken__c = response.access_token;
 	    connector.RefreshToken__c = response.refresh_token;
 	    connector.TokenType__c = response.token_type;

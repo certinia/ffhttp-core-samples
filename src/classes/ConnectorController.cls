@@ -154,7 +154,7 @@ public with sharing class ConnectorController
 			return;
 		}
 		
-		ViewState.service.exchangeCode(ViewState.AuthCode);
+		ViewState.service.exchangeCode(ViewState.AuthCode, true);
 	
 	    ViewState.dirty = true;	
 	    ViewState.authorized = true;
@@ -177,7 +177,10 @@ public with sharing class ConnectorController
 	
 	Boolean isConfigured() 
 	{
-		return ViewState.Service.Connector.ConnectorType__r.Name != null;
+		return ViewState.Service != null 
+		  && ViewState.Service.Connector != null 
+		  && ViewState.Service.Connector.ConnectorType__r != null
+		  && ViewState.Service.Connector.ConnectorType__r.Name != null;
 	}
 	
 	/**
