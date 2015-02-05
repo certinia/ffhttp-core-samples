@@ -139,7 +139,7 @@ public with sharing class ConnectorService implements ffhttp_IConnectorType
 		connector.RefreshTokenRequested__c = connector.AccessTokenRequested__c;
 		
 		ffhttp_OAuthClient client = new ffhttp_OAuthClient();
-		ffhttp_OAuthClient.ExchangeAuthCodeRequest request = client.exchangeAuthCodeRequest(this, code);
+		ffhttp_OAuthClient.ExchangeRefreshTokenRequest request = client.exchangeRefreshTokenRequest(this, code);
 		
     	ffhttp_OAuthClient.AccessTokenResponse response = (ffhttp_OAuthClient.AccessTokenResponse)request.execute();
     	connector.AccessToken__c = response.access_token;
