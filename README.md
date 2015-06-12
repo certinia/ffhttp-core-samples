@@ -30,7 +30,6 @@ Creating a connection to another service
 Once the app has been deployed you can then connect to another service. This section explains how to create a connection to Dropbox.
 
 ###Create an app in Dropbox
-
 1. Create (or log in to) your Dropbox account.
 2. Go to https://www.dropbox.com/developers/apps and select **Create App**.
 3. Select **Dropbox API app** for **What type of data does your app need to store on Dropbox?**.
@@ -52,14 +51,15 @@ Once the app has been deployed you can then connect to another service. This sec
 8. Set the **Client Secret** to the App Secret obtained earlier.
 9. Set the **Redirect URI** to the same URL as you set in step 8 in the Create an app in Dropbox section.
 10. Set the **Developer Name** e.g. Dropbox 
-10. Make sure that **Scope Required** is unchecked.
-11. Set the **scope** to https://api.dropbox.com/.
-12. **Save** the Connector Type.
-13. Select **New Connector**.
-14. Set the **Connector Name** and save.
-15. Select the Connector and then **Activate**. You will be directed to another Salesforce page that activates your connector.
-16. Select **Authorize**. This will prompt you to log in to your Google account (if you are not already logged in) and then authenticate the scope provided earlier. Select **Accept** to authorize.
-17. Select **Save**. The connector is now ready for use.
+ * If Developer Name is not seen, go back to setup step 4 in the configuration section above.
+11. Make sure that **Scope Required** is unchecked.
+12. Set the **scope** to https://api.dropbox.com/.
+13. **Save** the Connector Type.
+14. Select **New Connector**.
+15. Set the **Connector Name** and save.
+16. Select the Connector and then **Activate**. You will be directed to another Salesforce page that activates your connector.
+17. Select **Authorize**. This will prompt you to log in to your Google account (if you are not already logged in) and then authenticate the scope provided earlier. Select **Accept** to authorize.
+18. Select **Save**. The connector is now ready for use.
 
 Reporting Issues & Enhancements
 -------------------------------
