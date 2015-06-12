@@ -51,6 +51,7 @@ Once the app has been deployed you can then connect to another service. This sec
 7. Set the **Client ID** to the App Key obtained earlier.
 8. Set the **Client Secret** to the App Secret obtained earlier.
 9. Set the **Redirect URI** to the same URL as you set in step 8 in the Create an app in Dropbox section.
+10. Set the **Developer Name** e.g. Dropbox 
 10. Make sure that **Scope Required** is unchecked.
 11. Set the **scope** to https://api.dropbox.com/.
 12. **Save** the Connector Type.
