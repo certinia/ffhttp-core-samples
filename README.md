@@ -22,7 +22,7 @@ This section explains how to configure the OAuth Sample App.
 5. Select your user.
 6. Select **Edit Assignments** in the **Permission Set Assignments** section.
 7. Add the **OAuth Sample App Permissions** permission set and **Save**.
-8. The **OAuth Sample App** project should display in the app menu. 
+8. The **OAuth Sample App** project should display in the app menu.
 9. Select the **OAuth Sample App** project. The **Connector Types** and **Connectors** tabs should be displayed.
 
 Creating a connection to another service
@@ -30,7 +30,6 @@ Creating a connection to another service
 Once the app has been deployed you can then connect to another service. This section explains how to create a connection to Dropbox.
 
 ###Create an app in Dropbox
-
 1. Create (or log in to) your Dropbox account.
 2. Go to https://www.dropbox.com/developers/apps and select **Create App**.
 3. Select **Dropbox API app** for **What type of data does your app need to store on Dropbox?**.
@@ -38,7 +37,7 @@ Once the app has been deployed you can then connect to another service. This sec
 5. Select **No** as **Can your app be limited to its own folder?**.
 6. Select **All file types** for **What type of files does your app need access to?**.
 7. Enter an **App name** and select **Create App**.
-8. Set the **Redirect URIs** to the URL of the Salesforce organisation e.g. https://eu3.salesforce.com/apex/conector.
+8. Set the **Redirect URIs** to the URL of the Salesforce organisation e.g. https://eu3.salesforce.com/apex/connector.
 9. Make sure you know the **App Key** and **App Secret** as they will be needed later.
 
 ###Create a Connector in Salesforce
@@ -46,19 +45,21 @@ Once the app has been deployed you can then connect to another service. This sec
 2. Select the **OAuth** app.
 3. Select **Connector Types** then **New**.
 4. Enter a **Connector Type Name** e.g. Dropbox.
-5. Set the **Authorization Endpoint** to https://www.dropbox.com/1/oauth2/authorize. 
+5. Set the **Authorization Endpoint** to https://www.dropbox.com/1/oauth2/authorize.
 6. Set the **Token Endpoint** to https://api.dropbox.com/1/oauth2/token.
 7. Set the **Client ID** to the App Key obtained earlier.
 8. Set the **Client Secret** to the App Secret obtained earlier.
 9. Set the **Redirect URI** to the same URL as you set in step 8 in the Create an app in Dropbox section.
-10. Make sure that **Scope Required** is unchecked.
-11. Set the **scope** to https://api.dropbox.com/.
-12. **Save** the Connector Type.
-13. Select **New Connector**.
-14. Set the **Connector Name** and save. 
-15. Select the Connector and then **Activate**. You will be directed to another Salesforce page that activates your connector.
-16. Select **Authorize**. This will prompt you to log in to your Google account (if you are not already logged in) and then authenticate the scope provided earlier. Select **Accept** to authorize. 
-17. Select **Save**. The connector is now ready for use.
+10. Set the **Developer Name** e.g. Dropbox 
+ * If Developer Name is not seen, go back to setup step 4 in the configuration section above.
+11. Make sure that **Scope Required** is unchecked.
+12. Set the **scope** to https://api.dropbox.com/.
+13. **Save** the Connector Type.
+14. Select **New Connector**.
+15. Set the **Connector Name** and save.
+16. Select the Connector and then **Activate**. You will be directed to another Salesforce page that activates your connector.
+17. Select **Authorize**. This will prompt you to log in to your Google account (if you are not already logged in) and then authenticate the scope provided earlier. Select **Accept** to authorize.
+18. Select **Save**. The connector is now ready for use.
 
 Reporting Issues & Enhancements
 -------------------------------
